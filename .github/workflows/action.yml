@@ -8,6 +8,11 @@ on:
       - '**incremental.json'
   #pull_request:
     #branches: [ main ]
+  pull_request:
+    types:
+      - opened
+    paths:
+      - '**.js' 
   workflow_dispatch:
     
 jobs:
@@ -24,7 +29,10 @@ jobs:
         status: starting
         channel: '#general'
         #message: Starting Build and Deploy...
-        message: Build branch Successfully
+        #if: ${{ steps.cpr.outputs.pull-request-number }}
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
       if: always()
            
       
@@ -35,3 +43,4 @@ jobs:
         #channel: '#general'
         #message: Build branch Successfully
       #if: always()
+      
