@@ -31,7 +31,7 @@ jobs:
         channel: '#general'
         #message: Starting Build and Deploy...
         #if: ${{ steps.cpr.outputs.pull-request-number }}
-        message:  message  "${{github.event.pull_request.title}}" 
+        message:  message  ${{github.event.pull_request}}
         run: |
           echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
           echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
