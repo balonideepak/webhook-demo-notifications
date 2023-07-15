@@ -37,6 +37,12 @@ jobs:
           echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
           echo "${{github.event.pull_request.title}}" 
       if: always()
+      
+    - name: print_title_of_pr
+      run: echo The Title of your PR is ${{ github.event.pull_request.title }} 
+      if: always()
+      
+  
            
       
     #- name: Slack Notification
