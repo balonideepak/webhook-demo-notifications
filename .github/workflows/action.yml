@@ -21,14 +21,15 @@ jobs:
       with: 
         status: starting
         channel: '#general'
-        message: Starting Build and Deploy...
+        #message: Starting Build and Deploy...
+        message: Build branch Successfully
       if: always()
            
       
-    - name: Slack Notification
-      uses: act10ns/slack@v1
-      with: 
-        status: ${{ job.status }}
-        channel: '#general'
-        message: Build branch Successfully
-      if: always()
+    #- name: Slack Notification
+      #uses: act10ns/slack@v1
+      #with: 
+        #status: ${{ job.status }}
+        #channel: '#general'
+        #message: Build branch Successfully
+      #if: always()
